@@ -64,5 +64,5 @@ python .\manage.py runserver
 
 Для облегченного редактирования кода и последующего использования определенный html блоков без их написания шаблоны были разбиты на компоненты.
 Вот само дерево:
+![изображение](https://user-images.githubusercontent.com/106653303/223094086-381ffa31-f0e8-4015-aaa4-b5bf15db18d4.png)
 
-![изображение](https://user-images.githubusercontent.com/106653303/223088343-f82ec495-205b-4e1c-9c65-49b604cf5709.png)
