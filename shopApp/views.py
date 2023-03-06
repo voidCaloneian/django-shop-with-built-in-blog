@@ -50,7 +50,6 @@ class Params:
             
         
         #  Возвращаем распакованный словарь параметров
-        print(params)
         return params
     
     @staticmethod
@@ -261,9 +260,6 @@ class Search(View):
         #  С отрендеренными пагинацией и продуктами
         if pagination.request_is_ajax(request):
             return pagination.response_to_ajax(search_words=search_words)
-            
-        for pr in Product.objects.all():
-            print(pr.id, pr.image)
             
         context = {
             'path' : 'shop',
