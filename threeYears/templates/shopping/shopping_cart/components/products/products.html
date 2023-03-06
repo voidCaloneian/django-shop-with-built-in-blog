@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="shoping__cart__table">
+            <!-- Продолжение ифа снаружи -->
+            <table>
+                <!-- Столбцы и их наименования -->
+                {% include 'shopping/shopping_cart/components/products/components/columns.html' %}
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <!-- Картинка и наименование товара -->
+                        {% include 'shopping/shopping_cart/components/products/components/image_and_name.html' %}
+                        
+                        <!-- Вес -->
+                        {% include 'shopping/shopping_cart/components/products/components/weight.html' %}
+                        
+                        <!-- Цена -->
+                        {% include 'shopping/shopping_cart/components/products/components/price/price.html' %}
+                        
+                        
+                        <!-- Выбрать количество -->
+                        {% include 'shopping/shopping_cart/components/products/components/quantity.html' %}
+                        
+                        <!-- Общая цена продукта -->
+                        {% include 'shopping/shopping_cart/components/products/components/total_product_price.html' %}
+                        
+                        <!-- Кнопка удаления продукта из корзины -->
+                        {% include 'shopping/shopping_cart/components/products/components/delete_button.html' %}
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

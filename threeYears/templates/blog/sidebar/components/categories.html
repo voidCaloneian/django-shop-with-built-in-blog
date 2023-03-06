@@ -1,0 +1,12 @@
+{% load CategoriesCounter %}
+
+<div class="blog__sidebar__item">
+    <h4>Выбранные категории</h4>
+    <ul>
+        <li><a href="/blog/?category=Все">Все ({% countCategory 'Все' %})</a></li>
+        <li><a href="/blog/?category=Еда">Еда ({% countCategory 'Еда' %})</a></li>
+        <li><a href="/blog/?category=Красота">Красота ({% countCategory 'Красота' %})</a></li>
+        <li><a href="/blog/?category=Стиль жизни">Стиль жизни ({% countCategory 'Стиль жизни' %})</a?category=Все</li>
+        <li><a href="/blog/?category=Путешествия">Путешествия ({% countCategory 'Путешествия' %})</a></li>
+    </ul>
+</div>

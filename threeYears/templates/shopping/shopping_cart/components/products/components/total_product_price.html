@@ -1,0 +1,9 @@
+{% if product.discount %}
+    <td class="shoping__cart__total">
+        {{product.discount.discounted_price}} ₽
+    </td>
+{% else %}
+    <td class="shoping__cart__total">
+        {{product.price}} ₽
+    </td>
+{% endif %}

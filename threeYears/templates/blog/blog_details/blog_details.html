@@ -1,0 +1,14 @@
+
+<!-- Вывеска с надписью 'Создание статьи' -->
+{% include 'body/components/section_logo.html' with label=Article.title|capfirst is_blog=True %}
+
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            <!-- Сайдбар -->
+            {% include 'blog/sidebar/sidebar.html' %}
+                
+            <!-- Правая часть приложения -->
+            {% include 'blog/blog_details/details.html' %}
+        </div>
+</section>

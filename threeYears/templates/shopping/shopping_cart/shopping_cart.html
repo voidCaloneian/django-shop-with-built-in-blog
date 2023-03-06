@@ -1,0 +1,32 @@
+{% load static %}
+<!-- Баннер -->
+{% include 'body/components/section_logo.html' with label='Корзина' %}
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+        <div class="container">
+            {% if products %}
+
+                <!-- Продукты -->
+                {% include 'shopping/shopping_cart/components/products/products.html' %}
+
+                <div class="row">
+                    <!-- Кнопка 'Продолжить покупки' -->
+                    {% include 'shopping/shopping_cart/components/continue_shopping.html' %}
+
+                    <!-- Окно применения купона -->
+                    {% include 'shopping/shopping_cart/components/coupon_block.html' %}
+
+                    <!-- Окно подсчёта общей цены корзины -->
+                    {% include 'shopping/shopping_cart/components/total_cart_price.html' %}
+
+
+                </div>
+            {% else %}
+                <!-- Вид, если продуктов в корзине нет -->
+                {% include 'shopping/shopping_cart/components/no_products/no_products.html' %}
+            {% endif %}
+        </div>
+    </section>
+    
+    <!-- Shoping Cart Section End -->

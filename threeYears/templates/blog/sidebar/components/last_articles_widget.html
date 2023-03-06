@@ -1,0 +1,19 @@
+{% load lastArticles %}
+
+<div class="blog__sidebar__item">
+    <h4>Последние статьи</h4>
+    <div class="blog__sidebar__recent">
+    {% show as recentArticles %}
+    {% for Article in recentArticles %}
+        <a href="/blog/article/?id={{Article.id}}" class="blog__sidebar__recent__item">
+            <div class="blog__sidebar__recent__item__pic">
+                <img src="{{Article.preview_image.url}}" alt="" style="width:70px; height:70px;">
+            </div>
+            <div class="blog__sidebar__recent__item__text">
+                <h6>{{Article.title | capfirst}}</h6>
+                <span>{{Article.date}}</span>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+</div>

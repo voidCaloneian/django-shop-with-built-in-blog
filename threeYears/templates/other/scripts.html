@@ -1,0 +1,30 @@
+{% load static %}
+<script src="{% static 'js/main/shopping_cart_widget_total_price.js' %}"></script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'js/mixitup.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main/main.js' %}"></script>
+
+{% if '/shop/shopping_cart/' in request.path %}
+<script src="{% static 'js/main/shopping_cart.js' %}"></script>
+
+{% elif '/product/' in request.path %}
+<script src="{% static 'js/main/details.js' %}"></script>
+
+{% elif 'shop' in request.path %}
+<script>
+    const global_min_price = {{min_price}} 
+    const global_max_price = {{max_price}} 
+</script>
+<script src="{% static 'js/main/sortAjax.js' %}"></script>
+<script src="{% static 'js/main/shop.js' %}"></script>
+{% endif %}
+
+<script>
+    refresh_shopping_cart_widget_balance()
+    refreshCartWidgetCounter()
+</script>

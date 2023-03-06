@@ -1,0 +1,14 @@
+<ul>
+    {% if product.amount > 0 %}
+        <li><b>В наличии</b> <span>{{product.amount}} шт.</span></li>
+    {% else %}
+        <li><span><samp>Нет в наличии</samp></span></li>
+    {% endif %}
+        <li><b>Доставка</b> <span>Доставка займёт 1 день | <samp>Самовывоз бесплатно!</samp></span></li>
+    <!-- Если категория - напитки -->
+    {% if product.category_id == 9 %} 
+        <li><b>Вес</b> <span>{{product.weight}} мл.</span></li>
+    {% else %}
+        <li><b>Вес</b> <span>{{product.weight}} г.</span></li>
+    {% endif %}
+</ul>

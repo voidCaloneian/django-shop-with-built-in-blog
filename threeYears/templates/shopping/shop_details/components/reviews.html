@@ -1,0 +1,79 @@
+{% if not adding_new %}
+<div class="col-lg-12">
+    <div class="product__details__tab">
+        <p class="product__details__label" data-value='{{reviews_amount}}' onclick="hideReviews()">Отзывы ({{reviews_amount}})</p>
+            <div class="product__details__tab__desc">
+                {% if request.user.is_authenticated %}
+                
+                {% comment %} То отоброжаем отзыв текущего пользователя первым {% endcomment %}
+                {% comment %} Если у пользователя уже написал отзыв на этот продукт, то выводим его {% endcomment %}
+                {% if current_user_review %}
+                <div class="row my-3 p-3" style="background-color: #F0F6FFA1;">
+                    <div class="col-md-12">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="mt-0 d-inline">Ваш отзыв</h6>
+                                <p class="d-inline ml-3 mb-0">Оценка - <span class="badge badge-secondary">{{ current_user_review.rating }}</span></p>
+                                <p>{{ current_user_review.comment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div id = "post_review_div">
+                    <center><button onclick='postReview()' style='margin-top:15px;' class='site-btn'>Оставить отзыв</button></center>
+                    <div style="display: flex; align-items: center;">
+                        <input id = 'review_rating' name='rating' type="text" class="form-control" style="max-width: 35px;">
+                        <p style="margin: 0; margin-left: 10px;" class="mb-0 mr-3 font-weight-bold"> Ваша оценка продукту</p>
+                    </div>
+                    <textarea id = 'review_text' class='form-control'></textarea>
+                </div>
+                {% endif %}
+                {% else %}
+
+                <center><h5>Для того, чтобы оставить отзыв, вам нужно авторизоваться!</h5></center>
+
+                {% endif %}
+                <hr style='border-top: 3px solid rgba(9, 0, 119, 0.19)' class="blog_article_line">
+
+                {% if reviews %}
+                {% for review in reviews %}
+                <div class="row my-3 p-3" style="background-color: #FFF9F9A1;">
+                    <div class="col-md-12">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="mt-0 d-inline">+{{ review.author.phone_number }}</h6>
+                                <p class="d-inline ml-3 mb-0">Оценка - <span class="badge badge-secondary">{{ review.rating }}</span></p>
+                                <p>{{ review.comment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <center><h5>У данного товара отзывы отсутствуют.</h5></center>
+                {% endif %}
+                <button class='site-btn' id='get_more_review' 
+                {% if not reviews %} style='display: None' {% endif%}>
+                Ещё отзывы</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+{% for review in new_reviews %}
+<div class="row my-3 p-3" style="background-color: #FFF9F9A1;">
+    <div class="col-md-12">
+        <div class="media">
+            <div class="media-body">
+                <h6 class="mt-0 d-inline">+{{ review.author.phone_number }}</h6>
+                <p class="d-inline ml-3 mb-0">Оценка - <span class="badge badge-secondary">{{ review.rating }}</span></p>
+                <p>{{ review.comment }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endif %}

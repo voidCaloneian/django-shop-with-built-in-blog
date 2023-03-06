@@ -1,0 +1,11 @@
+{% load static %}
+{% load getRandomProducts %}
+
+<!-- Баннер -->
+{% include 'body/components/section_logo.html' with label=product.category|upper %}
+
+<!-- Продукт -->
+{% include 'shopping/shop_details/components/product_info/product_info.html' %}
+
+<!-- Похожие продукты -->
+{% include 'shopping/shop_details/components/related_products/related_products.html' %}

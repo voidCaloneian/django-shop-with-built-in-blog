@@ -1,0 +1,8 @@
+<div>
+    {% if product.discount %}
+        {% include 'shopping/shopping_cart/components/products/components/price/components/discounted_price.html' %}
+
+    {% else %}
+        {% include 'shopping/shopping_cart/components/products/components/price/components/normal_price.html' %}
+        
+    {% endif %}

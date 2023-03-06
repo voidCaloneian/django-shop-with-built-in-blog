@@ -1,0 +1,22 @@
+
+<!-- Вывеска с надписью 'Статьи' -->
+{% include 'body/components/section_logo.html' with label='Статьи' is_blog=True %}
+
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            <!-- Сайдбар -->
+            {% include 'blog/sidebar/sidebar.html' %}
+                
+            <!-- Правая часть приложения -->
+            <div class="col-lg-8 col-md-7">
+                <div class="row">
+                    <!-- Артикли -->
+                    {% include 'blog/grid/components/articles/articles.html' %}
+            
+                    <!-- Пагинация -->
+                    {% include 'blog/grid/components/pagination.html' %}
+                </div>
+            </div>
+        </div>
+</section>

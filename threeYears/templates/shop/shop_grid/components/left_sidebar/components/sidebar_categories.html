@@ -1,0 +1,17 @@
+{% load static %}
+<div class="sidebar__item">
+    <h4>Категории</h4>
+    <ul onclick="clearCookieSearchParams()">
+        <li><a href="{% url 'shop' %}?category=акции"><strong style="font-size: 25px;
+            font-weight: 800;">Акции</strong></a></li>
+        <li><a href="{% url 'shop' %}?category=колбасы и сосиски">Колбасы и Сосиски</a></li>
+        <li><a href="{% url 'shop' %}?category=торты и пирожные">Торты и Пирожные</a></li>
+        <li><a href="{% url 'shop' %}?category=овощи и фрукты">Овощи и Фрукты</a></li>
+        <li><a href="{% url 'shop' %}?category=хлеб и выпечка">Хлеб и Выпечка</a></li>
+        <li><a href="{% url 'shop' %}?category=мясо и птица">Мясо и Птица</a></li>
+        <li><a href="{% url 'shop' %}?category=сладости">Сладости</a></li>
+        <li><a href="{% url 'shop' %}?category=бакалея">Бакалея</a></li>
+        <li><a href="{% url 'shop' %}?category=напитки">Напитки</a></li>
+        <li><a href="{% url 'shop' %}?category=снеки">Снеки</a></li>
+    </ul>
+</div>

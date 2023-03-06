@@ -1,0 +1,23 @@
+
+<div class="col-lg-8 col-md-7 order-md-1 order-1">
+    <div class="blog__details__text">
+        <div class='detailsImage' style='background-image: url({{Article.preview_image.url}});'>
+            <img style='opacity:0' src="{{Article.preview_image.url}}" alt="">
+        </div>
+        <hr class="blog_article_line">
+        {{Article.content | safe}}
+        <hr class="blog_article_line">
+    </div>
+    <div class="blog__details__content">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="blog__details__widget">
+                    <ul>
+                        <li><span>Категория:</span> {{Article.category}}</li>
+                        <li><span>Тэги:</span> {{Article.tags}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

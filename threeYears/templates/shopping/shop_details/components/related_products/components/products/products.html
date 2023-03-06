@@ -1,0 +1,15 @@
+{% load getRandomProducts %}
+<div class="row">
+    {% getRandomProducts product.category_id as products %}
+    {% for product in products %}
+        {% if product.discount %} <!-- Если у товара есть скидка -->
+
+            {% include 'shopping/shop_details/components/related_products/components/products/components/if_discount.html' %}
+            
+        {% else %} <!-- Если её нет -->
+
+            {% include 'shopping/shop_details/components/related_products/components/products/components/if_normal.html' %}
+            
+        {% endif %}
+    {% endfor %}
+</div>

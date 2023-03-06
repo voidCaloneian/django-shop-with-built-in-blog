@@ -1,0 +1,13 @@
+<div class="col-lg-9 col-md-7">
+    <div class="filter__item">
+        <!-- Тайтл категории продуктов -->
+        {% include 'shop/shop_grid/components/products_filtering_and_info/components/section_title.html' %}
+        <div class="row">
+            <!-- Слайдер сортировки -->
+            {% include 'shop/shop_grid/components/products_filtering_and_info/components/sort_by.html' %}
+            <!-- Надпись ' Продуктов найдено: {n} ' -->
+            {% include 'shop/shop_grid/components/products_filtering_and_info/components/products_found.html' %}
+            <!-- Работа с jquery для преобразования слайдера сортировки -->
+            {% include 'shop/shop_grid/components/products_filtering_and_info/components/sort_by_jquery.html' %}
+        </div>
+    </div>

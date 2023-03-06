@@ -1,0 +1,6 @@
+{% if product.discount %}
+    <div class="product__item__price product__discount__item__text" style="font-size:35px; text-align:left; padding-top:0; color: #dd2222">
+    {{product.discount.discounted_price}} ₽<span style="text-decoration:line-through; font-size:22px; display: inline; margin-left: 15px;">{{product.price}} ₽</span></div>
+{% else %}
+    <div class="product__details__price">{{product.price}} ₽</div>
+{% endif %}

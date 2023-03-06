@@ -1,0 +1,34 @@
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <!-- Картинка товара -->
+            {% include 'shopping/shop_details/components/product_info/components/image.html' %}
+
+            <!-- Информация о товаре -->
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>{{product.name}}</h3>
+                    <!-- Рейтинг товара -->
+                    {% include 'shopping/shop_details/components/product_info/components/rating.html' %}
+
+                    <!-- Цена товара -->
+                    {% include 'shopping/shop_details/components/product_info/components/price.html' %}
+
+                    <!-- Див изменения количества -->
+                    {% include 'shopping/shop_details/components/product_info/components/quantity.html' %}
+                    
+                    <!-- Кнопка добавить в корзину / убрать из неё -->
+                    {% include 'shopping/shop_details/components/product_info/components/button.html' %}
+                    
+                    <!-- Добавить в желаемое -->
+                    {% include 'shopping/shop_details/components/product_info/components/add_to_wishes.html' %}
+
+                    <!-- Информация: 'В наличии..', 'Доставка..', 'Вес..' -->
+                    {% include 'shopping/shop_details/components/product_info/components/other_info.html' %}
+                </div>
+            </div>
+            <!-- Отзывы -->
+            {% include 'shopping/shop_details/components/reviews.html' %}
+        </div>
+    </div>
+</section>

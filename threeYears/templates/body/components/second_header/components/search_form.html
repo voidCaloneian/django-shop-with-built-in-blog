@@ -1,0 +1,7 @@
+{% load static %}
+<div class="hero__search__form">
+    <form action="{% url 'search' %}" method='GET' onsubmit='clearCookieSearchParams()'>
+        <input value="{{search}}" type="text" placeholder="Я хочу..." autocomplete="off" name="search">
+        <button type="submit" class="site-btn">Искать</button>
+    </form>
+</div>

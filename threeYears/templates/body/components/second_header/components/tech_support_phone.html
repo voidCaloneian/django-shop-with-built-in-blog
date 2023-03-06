@@ -1,0 +1,13 @@
+{% load beautify %}
+<div class="hero__search__phone">
+    <div class="hero__search__phone__text">
+        {% if request.user.is_authenticated %}
+            <a onclick='logout()'"><h5>{% beautify request.user.phone_number %}</h5></a>
+            <center><span>Мой Профиль</span></center>
+            {% else %}
+            
+            <a href="{% url 'login' %}" onclick='saveLastPage()'><h5>Войти</h5></a>
+            <center><span>Чтобы увидеть свой профиль</span></center>
+        {% endif %}
+    </div>
+</div>

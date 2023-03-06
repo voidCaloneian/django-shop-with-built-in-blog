@@ -1,0 +1,11 @@
+ <!-- Если категория - напитки, то миллилитры -->
+ {% if product.category_id == 9 %}
+    <td class="shoping__cart__weight">
+        {{product.weight}} мл.
+    </td>
+ <!-- Если другие остальные категории, то граммы -->
+ {% else %}
+    <td class="shoping__cart__weight">
+        {{product.weight}} г.
+    </td>
+ {% endif %}

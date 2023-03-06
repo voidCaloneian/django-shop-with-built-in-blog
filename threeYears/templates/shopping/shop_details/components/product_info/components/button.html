@@ -1,0 +1,5 @@
+{% if product_in_shopping_cart %}
+    <button id="detailsButton" onclick="addOrDeleteProductId({{product.id}}, getAmountFromDetails(this)); swapButtonColor()" class="primary-btn primary-btn-added">Убрать из Корзины</button>
+{% else %}
+    <button id="detailsButton" onclick="addOrDeleteProductId({{product.id}}, getAmountFromDetails(this)); swapButtonColor()" class="primary-btn">Добавить в Корзину</button>
+{% endif %}

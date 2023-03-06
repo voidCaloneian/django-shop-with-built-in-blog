@@ -1,0 +1,48 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="icon" href="{% static 'img/favicon.ico' %}">
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id = 'registerForm' method = "post" action="{% url 'login' %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<p class="text-danger position-absolute hide">Номер телефона уже зарегистрирован, введите новый</p>
+			<!-- Добавить скрытие через js -->
+			<a id='registerCode' class="sms_code hide" href="#">Отправить новый код</a> 
+			<input type="hidden" name="register" value="1">
+			<button id="register">Зарегистрироваться</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id = 'loginForm' method = "post" action="{% url 'login' %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<p class="text-danger position-absolute hide">Введите существующий номер телефона</p>
+			<!-- Добавить скрытие через js -->
+			<a id='loginCode' class="sms_code hide" href="#">Отправить новый код</a>
+			<input type="hidden" name="login" value="1">
+			<button id="login">Авторизоваться</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Знакомы?</h1>
+				<p>Если у вас есть аккаунт, то авторизуйтесь же, скорей!</p>
+				<button class="ghost" id="signIn">Авторизоваться</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Привет!</h1>
+				<p>Вы здесь впервые? Зарегистрируйтесь!</p>
+				<button class="ghost" id="signUp">Зарегистрироваться</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="{% static 'js/main/login.js' %}"></script>

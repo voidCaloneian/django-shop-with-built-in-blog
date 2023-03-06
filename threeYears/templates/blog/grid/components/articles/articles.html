@@ -1,0 +1,13 @@
+{% for Article in Articles %}
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                    {% include 'blog/grid/components/articles/components/image.html' %}
+                    <div class="blog__item__text">
+                        {% include 'blog/grid/components/articles/components/date_and_comments_amount.html' %}
+                        <h5><a href="#">{{Article.title | capfirst}}</a></h5>
+                        <p class="article__description">{{Article.description | capfirst}}</p>
+                        <a href="/blog/article/?id={{Article.id}}" class="blog__btn">Читать<span class="arrow_right"></span></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}

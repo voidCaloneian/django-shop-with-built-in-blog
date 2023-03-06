@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- Баннер -->
+{% include 'body/components/section_logo.html' with label='Каталог' %}
+
+<!-- Каталог -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <!-- Левый сайдбар (Категории товаров, слайдер цены) -->
+            {% include 'shop/shop_grid/components/left_sidebar/left_sidebar.html' %}
+            <!-- Название текущей категории, сортировка, надпись ' Продуктов найдено : {n} ' -->
+            {% include 'shop/shop_grid/components/products_filtering_and_info/products_filtering_and_info.html' %}
+            <!-- Блок продуктов -->
+            {% include 'shop/shop_grid/components/products_block/products.html' %}
+            <!-- Пагинация -->
+            {% include 'shop/shop_grid/components/pagination.html' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+
+

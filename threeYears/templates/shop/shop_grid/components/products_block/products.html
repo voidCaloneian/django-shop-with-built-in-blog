@@ -1,0 +1,11 @@
+<div class="row" id = "product-wrapper">
+    {% for product in products %}
+        {% if product.discount %}
+            <!-- Если у продукта есть скидка -->
+            {% include 'shop/shop_grid/components/products_block/discounted_or_normal/discounted.html' %}
+            {% else %}
+            <!-- Если у продукта нет скидки -->
+            {% include 'shop/shop_grid/components/products_block/discounted_or_normal/normal.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>

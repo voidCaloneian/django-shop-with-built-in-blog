@@ -1,0 +1,30 @@
+
+<!-- Не стал разделять для упрощения понимания работы формы -->
+<div class="col-lg-8 col-md-7">
+    <form method="post" action="/blog/creation" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {% for field in form %}
+            {% if field.label == 'Content' %}
+                <br><br><br>
+                {{field}}
+                <br><br>
+    
+            {% elif field.label == 'Preview image' %}
+                <label class = 'id_preview_image' for="id_preview_image">Выберите миниатюру статьи</label>
+                {{field}}
+    
+            {% elif field.label == 'Категория' %}
+                <br><br>
+                <h5>Категория</h5>
+                {{field}}
+    
+            {% else %}
+                {{field}}
+                <br>
+                
+            {% endif %}
+        {% endfor %}
+        <button class="primary-btn primary-btn-added" type="submit" >Создать статью</button>
+    </form>
+</div>

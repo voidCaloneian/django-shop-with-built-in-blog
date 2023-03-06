@@ -1,0 +1,43 @@
+{% load static %}
+<body>
+    <!-- Preloader -->
+    {% include 'other/preloader.html' %}
+
+    
+    <!--  Header -->
+    {% include 'body/header.html' %}
+
+    
+    
+    {% if path == 'shop' %}
+        {% include 'shop/shop_grid/shop-grid.html' %}
+        
+    {% elif path == 'blog' %}
+        {% include 'blog/grid/grid.html' %}
+    {% elif path == 'blog_creation' %}
+        {% include 'blog/blog_creation/blog_creation.html' %}
+    {% elif path == 'blog_details' %}
+        {% include 'blog/blog_details/blog_details.html' %}
+    {% elif path == 'details' %}
+    {% include 'shopping/shop_details/shop_details.html' %}
+
+    {% elif path == 'cart' %}
+    {% include 'shopping/shopping_cart/shopping_cart.html' %}
+
+    {% endif %}
+    
+    
+
+
+
+
+    {% include 'body/random_articles.html' %}
+    
+    <!-- Footer Section Begin -->
+    {% include 'body/footer.html' %}
+
+    <!-- Js Plugins -->
+    {% include 'other/scripts.html' %}
+</body>
+
+</html>
