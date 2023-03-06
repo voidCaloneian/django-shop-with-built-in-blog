@@ -1,3 +1,8 @@
 Django магазин с встроенным блогом
-Страница каталога
-![изображение](https://user-images.githubusercontent.com/106653303/223064081-217d4afe-ea7c-4ca2-8be8-bcf124a3437c.png)
+
+Для начала работы с проектом необходимо выполнить следующие команды в консоли:
+
+git clone https://github.com/voidCaloneian/django-shop-with-built-in-blog.git
+cd django-shop-with-build-in-blog
+pip install -r .\requirements.txt
+python .\manage.py runserver
