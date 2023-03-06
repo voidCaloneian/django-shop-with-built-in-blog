@@ -8,3 +8,7 @@ cd django-shop-with-build-in-blog
 pip install -r .\requirements.txt
 python .\manage.py runserver
 ```
+
+Стандартный пользователь с правами администратора:
+- номер телефона: 77777777777
+- Пароль: qwe123
