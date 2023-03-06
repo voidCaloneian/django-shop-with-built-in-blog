@@ -20,9 +20,8 @@
                     <div class="blog__item__text">
                         <ul>
                             <li><i class="fa fa-calendar-o"></i>{{Article.date}}</li>
-                            <li><i class="fa fa-comment-o"></i>{{Article.comments_amount}}</li>
                         </ul>
-                        <h5><a href="/blog/article/?id={{Article.id}}">{{Article.title | capfirst}}</a></h5>
+                        <h5><a href="/blog/article/?id={{Article.id}}" onclick="nullScrollPosition()">{{Article.title | capfirst}}</a></h5>
                         <p>{{Article.description | capfirst}}</p>
                     </div>
                 </div>

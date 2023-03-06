@@ -220,7 +220,11 @@
                 newVal = 1;
             }
         }
-        changeProductAmount($button, newVal, true)
+        if (window.location.href.includes('product')){
+            changeProductAmount($button, newVal, false)
+        } else {
+            changeProductAmount($button, newVal, true)
+        }
     });
 
 })(jQuery);
@@ -371,16 +375,13 @@ function setNewAmountValue(item, value, called_by_button = false){
 function changeProductAmount(item, value, called_by_button=false){
     // Проверяет, вызвана функция кнопкой, либо же ручным вводом от пользователя
     if (called_by_button) {
-        setNewAmountValue(item, value, called_by_button=true, )
+        setNewAmountValue(item, value, called_by_button=true)
         changeProductTotalPrice(item, value)
+        refreshTotalPrice()
     }
     else{
-        let value = item.value
-        if (value < 1){value = 1; item.value = 1}
-        setNewAmountValue($(item), value)
-        changeProductTotalPrice($(item), value)
+        setNewAmountValue(item, value, called_by_button=true)
     }
-    refreshTotalPrice()
     refreshCartWidgetCounter()
     refresh_shopping_cart_widget_balance()
 }
@@ -392,7 +393,7 @@ function saveScrollPosition() {
     debounceTimer = setTimeout(function() {
         var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         setCookie('scroll_position', scrollPosition, 1);
-  }, 250);
+  }, 100);
 }
 
 function nullScrollPosition(){
@@ -409,6 +410,7 @@ function saveLastPage() {
     var lastPage = getCurrentUrl()
     setCookie('last_page', lastPage, 1);
   }
+  
 
 function getCurrentUrl(){
     return window.location.href

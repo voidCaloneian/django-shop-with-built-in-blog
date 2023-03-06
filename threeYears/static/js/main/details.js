@@ -122,3 +122,44 @@ function postReview(){
     }
 })
 }
+
+// Функция смены цвета добавления товара в корзину на странице каталога (с белого на зеленый и наоборот)
+function changeCartColor(item){
+    if (item.className == ''){
+        item.className = 'fa-shopping-cart-added'
+    } else{
+        item.className = ''
+    }
+}
+
+// Функция выполняется после загрузки страницы, 
+// чтобы изменить цвета картинок добавления товара в корзину, продукты которых в куках
+function changeAllCartColor(){
+    let cookies = getCookie('product_ids')
+
+    // Проверка, есть ли продукты в корзине вообще
+    if (cookies){
+    
+        cookies = cookies.split(' ') 
+        let cookies_list = []
+        
+        // Создание листа, состоящего только из айди продуктов
+        // Изначально лист состоит из элементов подобного стиля
+        //               id_количествоТовара
+
+        for (let i in cookies){
+            let _id = cookies[i].split('_')[0]
+            cookies_list.push(_id)
+        }
+        // Проход по каждому из товаров
+        $('.fa-shopping-cart').each(function(){
+            let item = this.parentNode
+            let item_id = $(item).data('product_id').toString()
+            if (cookies_list.includes(item_id)){
+                item.className = 'fa-shopping-cart-added'
+            } else{
+                item.className = ''
+            }
+        })
+    }
+}

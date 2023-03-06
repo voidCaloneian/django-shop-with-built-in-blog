@@ -3,13 +3,12 @@
         <div class="product__discount__item__pic set-bg" data-setbg="{{product.image.url}}">
             <div class="product__discount__percent">-{{product.discount.discount_value}}%</div>
             <ul class="product__item__pic__hover">
-                <li style="background-color: #00000000;"><a><i class="fa fa-heart"></i></a></li>
                 <li ><a data-product_id = "{{product.id}}" onclick="addOrDeleteProductId({{product.id}}); changeCartColor(this)"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
         <!-- url("/static/img/product/product-3.jpg"); -->
         <div class="product__discount__item__text">
-            <h6><a href="{% url 'product' %}?id={{product.id}}" class='discounted__item'>{{product.name}}</a></h6>
+            <h6><a href="{% url 'product' %}?id={{product.id}}" class='discounted__item' onclick="nullScrollPosition()">{{product.name}}</a></h6>
             <div class="product__item__price">{{product.discount.discounted_price}} ₽ <span>{{product.price}} ₽</span></div>
         </div>
     </div>

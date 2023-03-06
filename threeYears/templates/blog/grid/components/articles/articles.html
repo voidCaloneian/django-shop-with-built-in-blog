@@ -4,9 +4,9 @@
                     {% include 'blog/grid/components/articles/components/image.html' %}
                     <div class="blog__item__text">
                         {% include 'blog/grid/components/articles/components/date_and_comments_amount.html' %}
-                        <h5><a href="#">{{Article.title | capfirst}}</a></h5>
+                        <h5>{{Article.title | capfirst}}</h5>
                         <p class="article__description">{{Article.description | capfirst}}</p>
-                        <a href="/blog/article/?id={{Article.id}}" class="blog__btn">Читать<span class="arrow_right"></span></a>
+                        <a href="/blog/article/?id={{Article.id}}" onclick="nullScrollPosition()" class="blog__btn">Читать<span class="arrow_right"></span></a>
                     </div>
                 </div>
             </div>

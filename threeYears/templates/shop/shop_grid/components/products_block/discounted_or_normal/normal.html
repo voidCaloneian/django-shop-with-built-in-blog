@@ -2,12 +2,11 @@
     <div class="product__item">
         <div class="product__item__pic set-bg" data-setbg="{{product.image.url}}">
             <ul class="product__item__pic__hover">
-                <li style="background-color: #00000000;"><a><i class="fa fa-heart"></i></a></li>
                 <li ><a data-product_id = "{{product.id}}" onclick="addOrDeleteProductId({{product.id}}); changeCartColor(this)"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
         <div class="product__item__text">
-            <h6><a href="{% url 'product' %}?id={{product.id}}">{{product.name}}</a></h6>
+            <h6><a href="{% url 'product' %}?id={{product.id}}" onclick="nullScrollPosition()">{{product.name}}</a></h6>
             <h5>{{product.price}} ₽</h5>
         </div>
     </div>
